@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="la">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ຄຳອວຍພອນຈາກລູກ
+    </title>
+
+    <link rel="shortcut icon" href="./Dimensions_ 1.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0037ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            perspective: 1000px;
+        }
+
+        .letter-container {
+            width: 300px;
+            height: 400px;
+            position: relative;
+        }
+
+        .letter {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+            transform: rotateY(0deg);
+        }
+
+        .letter.open {
+            transform: rotateY(-180deg);
+        }
+
+        .letter-side {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border: 1px solid #5fd225;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            background: #64cd28;
+            padding: 20px;
+        }
+
+        .letter-front {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: #0cc4ce;
+            color: #333;
+        }
+
+        .letter-back {
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: #04f2ea;
+            color: #333;
+        }
+
+        .letter-back h1 {
+            color: #000000;
+            margin-bottom: 10px;
+        }
+
+        .letter-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #000000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .letter-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="letter-container">
+        <div class="letter" id="letter">
+            <div class="letter-side letter-front">
+                <button class="letter-button" onclick="openLetter()">ເຖິງພໍ່ແມ່</button>
+
+            </div>
+            <div class="letter-side letter-back">
+                <h1>ນີ້ແມ່ນຄຳອວຍພອນຈາກລູກ</h1>
+                <p> ລູກຂໍໃຫ້ອີ່ພໍ່ອີ່ແມ່ມີແຕ່ຄວາມສຸກຮັກກັນໄປດົນໆ
+                    ລູກຮູ້ວ່າໂຕລູກເອງເປັນຄົນທີ່ບໍ່ໄດ້ດີເດັ່ນ
+                    ແຕ່ລູກກະສິພະຍາຍາມຊອກຮູ້ຫາຮຽນ
+                    ເພື່ອໃນອານາຄົດຈະເຮັດໃຫ້ພໍ່ແມ່ຢູ່ສະບາຍ
+                    ບໍ່ຕ້ອງຕາກລົມຕາກຝົນລູກຢາກຂໍພໍ່ກັບແມ່ຢູ່ນຳລູກໄປດົນໆ</p>
+                <p>ສຸດທ້າຍນີ້ລູກຂໍໃຫ້ພໍ່ກັບແມ່ສຸກຂະພາບແຂງແຮງມີຄວາມສຸກຕະຫຼອດໄປ</p>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        function openLetter() {
+            document.getElementById('letter').classList.toggle('open');
+        }
+    </script>
+</body>
+
+</html>
